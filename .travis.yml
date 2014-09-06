@@ -13,5 +13,6 @@ env:
   - DB_TESTING: 1
 before_install:
    - "cpanm PGObject::Util::PseudoCSV"
+   - "cpanm Devel::Cover::Report::Coveralls"
 script:
    export RELEASE_TESTING=1 && perl Makefile.PL && make test && cover -test -report coveralls
